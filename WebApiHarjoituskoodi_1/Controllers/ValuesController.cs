@@ -14,14 +14,20 @@ namespace WebApiHarjoituskoodi_1.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2","Testi","Tekstin","Pätkä" };
         }
 
-        // GET api/values/5
+        // GET api/values/Jussi
         [HttpGet("{nimi}")]
         public ActionResult<string> Get(string nimi)
         {
             return "Moi " + nimi;
+        }
+        // GET api/values/Jussi/Makkonen
+        [HttpGet("{etunimi}/{sukunimi}")]
+        public ActionResult<string> Get(string etunimi, string sukunimi)
+        {
+            return "Hyvää päivää " + etunimi + " " + sukunimi;
         }
 
         // POST api/values
